@@ -21,6 +21,7 @@
       background-size: cover;
       background-attachment: fixed;
       color: var(--text-color);
+      scroll-behavior: smooth;
     }
     .overlay {
       background-color: var(--bg-color);
@@ -39,6 +40,9 @@
       width: 100%;
       text-align: center;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
     }
     .profile-pic {
       width: 150px;
@@ -51,11 +55,6 @@
     h1 {
       font-size: 1.8rem;
       margin: 0.5rem 0;
-    }
-    p.bio {
-      font-style: italic;
-      color: var(--subtext-color);
-      margin-bottom: 1.5rem;
     }
     .slider {
       display: flex;
@@ -102,6 +101,18 @@
       font-size: 0.8rem;
       color: var(--footer-color);
     }
+    .quote-box {
+      margin: 2rem 0;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--subtext-color);
+    }
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
@@ -109,7 +120,8 @@
     <div class="card">
       <img src="foto-fatx.webp" alt="Sulthan Fattah Sidik Pramono" class="profile-pic" />
       <h1>Sulthan Fattah Sidik Pramono</h1>
-      <p class="bio">"Sekai ni itami o"</p>
+
+      <div class="quote-box" id="quoteBox">"Loading quote..."</div>
 
       <div class="section">
         <h2>Pengisi Waktu Luang</h2>
@@ -120,7 +132,7 @@
             <p>Main game biar gak stres, apalagi kalo menang terus.</p>
           </div>
           <div class="slider-card">
-            <img src="mbaca.jpg" alt="Membaca">
+            <img src="baca.jpg" alt="Membaca">
             <h3>📚 Membaca</h3>
             <p>Baca apa aja, dari manga sampe konspirasi sejarah.</p>
           </div>
@@ -139,5 +151,18 @@
     </div>
     <div class="footer">&copy; 2025 Sulthan Fattah Sidik Pramono</div>
   </div>
+
+  <script>
+    const quotes = [
+      "If you don’t fight, you can’t win. – Eren Yeager",
+      "This world is cruel... and also very beautiful. – Mikasa",
+      "I want to see and understand the world outside. – Armin",
+      "No matter how messed up things get, you can always figure out the best solution. – Hange",
+      "I’ll destroy them. Every last one of those animals! – Eren",
+      "I want to be free. – Eren"
+    ];
+    const quoteBox = document.getElementById("quoteBox");
+    quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+  </script>
 </body>
 </html>
