@@ -1,38 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sulthan Fattah Sidik Pramono</title>
-  <meta name="description" content="Profil pribadi Sulthan Fattah Sidik Pramono" />
   <style>
     :root {
-      --bg-color: rgba(15,15,15,0.85);
-      --card-color: #1a1a1a;
+      --bg-color: rgba(15, 15, 15, 0.85);
+      --card-color: #1f1f1f;
       --text-color: #fff;
       --subtext-color: #aaa;
       --border-color: #444;
       --link-color: #1da1f2;
       --footer-color: #666;
     }
-    .light {
-      --bg-color: rgba(255,255,255,0.85);
-      --card-color: #fff;
-      --text-color: #111;
-      --subtext-color: #555;
-      --border-color: #ccc;
-      --link-color: #007acc;
-      --footer-color: #999;
-    }
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      color: var(--text-color);
       background: url('bg.jpg') no-repeat center center fixed;
       background-size: cover;
       background-attachment: fixed;
-      transition: color 0.3s ease;
+      color: var(--text-color);
     }
     .overlay {
       background-color: var(--bg-color);
@@ -41,34 +29,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-    .toggle-btn {
-      position: fixed;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: 2px solid var(--border-color);
-      color: var(--text-color);
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      z-index: 100;
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease;
-    }
-    .toggle-btn:hover {
-      background-color: var(--border-color);
+      backdrop-filter: blur(4px);
     }
     .card {
       background-color: var(--card-color);
       border-radius: 16px;
       padding: 2rem;
-      max-width: 400px;
+      max-width: 500px;
       width: 100%;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(255,255,255,0.05);
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     }
     .profile-pic {
       width: 150px;
@@ -87,61 +57,87 @@
       color: var(--subtext-color);
       margin-bottom: 1.5rem;
     }
-    .section {
-      text-align: left;
-      margin-top: 1.5rem;
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+    .slider-card {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
+      background: #2c2c2c;
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    .slider-card img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+    .slider-card h3 {
+      margin-top: 0.5rem;
+      color: #fff;
     }
     .section h2 {
       font-size: 1.2rem;
-      color: var(--text-color);
-      margin-bottom: 0.5rem;
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
-    ul { padding-left: 1.2rem; margin:0; }
-    ul li { margin-bottom: 0.5rem; }
     .contact a {
       color: var(--link-color);
       text-decoration: none;
     }
-    .contact a:hover { text-decoration: underline; }
     .footer {
       margin-top: 2rem;
       font-size: 0.8rem;
       color: var(--footer-color);
-      text-align: center;
     }
   </style>
 </head>
 <body>
-  <button class="toggle-btn" onclick="toggleTheme()">🌗 Ganti Mode</button>
   <div class="overlay">
     <div class="card">
       <img src="foto-fatx.webp" alt="Sulthan Fattah Sidik Pramono" class="profile-pic" />
       <h1>Sulthan Fattah Sidik Pramono</h1>
       <p class="bio">"Sekai ni itami o"</p>
+
       <div class="section">
-        <h2>Keahlian</h2><ul><li>Yapping 🔊</li></ul>
+        <h2>Pengisi Waktu Luang</h2>
+        <div class="slider">
+          <div class="slider-card">
+            <img src="game.jpg" alt="Game">
+            <h3>🎮 Ngagame</h3>
+            <p>Main game biar gak stres, apalagi kalo menang terus.</p>
+          </div>
+          <div class="slider-card">
+            <img src="baca.jpg" alt="Membaca">
+            <h3>📚 Membaca</h3>
+            <p>Baca apa aja, dari manga sampe konspirasi sejarah.</p>
+          </div>
+          <div class="slider-card">
+            <img src="nulis.jpg" alt="Menulis">
+            <h3>✍️ Menulis</h3>
+            <p>Tuang isi kepala ke dalam kata, biar gak penuh sendiri.</p>
+          </div>
+        </div>
       </div>
-      <div class="section">
-        <h2>Portofolio</h2><p>Belum ada</p>
-      </div>
+
       <div class="section contact">
-        <h2>Kontak</h2><p>Instagram: <a href="https://instagram.com/sulfatgpp_" target="_blank">@sulfatgpp_</a></p>
+        <h2>Kontak</h2>
+        <p>Instagram: <a href="https://instagram.com/sulfatgpp_" target="_blank">@sulfatgpp_</a></p>
       </div>
     </div>
     <div class="footer">&copy; 2025 Sulthan Fattah Sidik Pramono</div>
   </div>
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('light');
-      localStorage.setItem('theme', document.body.classList.contains('light') ? 'light' : 'dark');
-    }
-    window.onload = () => {
-      if (localStorage.getItem('theme') === 'light') {
-        document.body.classList.add('light');
-      }
-    };
-  </script>
 </body>
 </html>
