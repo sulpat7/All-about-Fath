@@ -113,6 +113,16 @@
         transform: translateY(0);
       }
     }
+
+    .toggle-button {
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      border: none;
+      background: #444;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -123,7 +133,9 @@
 
       <div class="quote-box" id="quoteBox">"Loading quote..."</div>
 
-      <div class="section">
+      <button id="toggleHobi" class="toggle-button">Tampilkan Pengisi Waktu Luang</button>
+
+      <div class="section" id="hobiSection">
         <h2>Pengisi Waktu Luang</h2>
         <div class="slider">
           <div class="slider-card">
@@ -163,6 +175,16 @@
     ];
     const quoteBox = document.getElementById("quoteBox");
     quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
+
+    const toggleBtn = document.getElementById("toggleHobi");
+    const hobiSection = document.getElementById("hobiSection");
+    hobiSection.style.display = "none";
+
+    toggleBtn.addEventListener("click", () => {
+      const visible = hobiSection.style.display === "block";
+      hobiSection.style.display = visible ? "none" : "block";
+      toggleBtn.textContent = visible ? "Tampilkan Pengisi Waktu Luang" : "Sembunyikan Pengisi Waktu Luang";
+    });
   </script>
 </body>
 </html>
