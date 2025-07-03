@@ -3,188 +3,115 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sulthan Fattah Sidik Pramono</title>
+  <title>Personal Branding - Nama Kamu</title>
   <style>
-    :root {
-      --bg-color: rgba(15, 15, 15, 0.85);
-      --card-color: #1f1f1f;
-      --text-color: #fff;
-      --subtext-color: #aaa;
-      --border-color: #444;
-      --link-color: #1da1f2;
-      --footer-color: #666;
-    }
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: url('bg.jpg') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-      color: var(--text-color);
-      scroll-behavior: smooth;
+      background-color: #f4f6f8;
+      color: #333;
     }
-    .overlay {
-      background-color: var(--bg-color);
-      min-height: 100vh;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(4px);
-    }
-    .card {
-      background-color: var(--card-color);
-      border-radius: 16px;
-      padding: 2rem;
-      max-width: 500px;
-      width: 100%;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease forwards;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--border-color);
-      margin-bottom: 1rem;
-    }
-    h1 {
-      font-size: 1.8rem;
-      margin: 0.5rem 0;
-    }
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      gap: 1rem;
-      padding: 1rem 0;
-    }
-    .slider::-webkit-scrollbar {
-      display: none;
-    }
-    .slider-card {
-      flex: 0 0 90%;
-      scroll-snap-align: center;
-      background: #2c2c2c;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-    .slider-card img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-    }
-    .slider-card h3 {
-      margin-top: 0.5rem;
-      color: #fff;
-    }
-    .section h2 {
-      font-size: 1.2rem;
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    .contact a {
-      color: var(--link-color);
-      text-decoration: none;
-    }
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: var(--footer-color);
-    }
-    .quote-box {
-      margin: 2rem 0;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--subtext-color);
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .toggle-button {
-      margin: 1rem 0;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      border: none;
-      background: #444;
+    header {
+      background-color: #007acc;
       color: white;
-      cursor: pointer;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      background: white;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+    h2 {
+      color: #007acc;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #007acc;
+      padding-bottom: 0.3rem;
+    }
+    ul.skills {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    ul.skills li {
+      background: #007acc;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      background-color: #e1e8f0;
+    }
+    a.contact-link {
+      color: #007acc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a.contact-link:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <div class="card">
-      <img src="foto-fatx.webp" alt="Sulthan Fattah Sidik Pramono" class="profile-pic" />
-      <h1>Sulthan Fattah Sidik Pramono</h1>
+  <header>
+    <h1>Nama Kamu</h1>
+    <p>Web Developer | Designer | Content Creator</p>
+  </header>
 
-      <div class="quote-box" id="quoteBox">"Loading quote..."</div>
+  <main>
+    <section id="about">
+      <h2>Tentang Saya</h2>
+      <p>
+        Halo! Saya adalah seorang web developer dan designer dengan passion dalam menciptakan website yang menarik dan fungsional. Saya senang belajar teknologi baru dan selalu berusaha memberikan hasil terbaik untuk setiap proyek yang saya kerjakan.
+      </p>
+    </section>
 
-      <button id="toggleHobi" class="toggle-button">Tampilkan Pengisi Waktu Luang</button>
+    <section id="skills">
+      <h2>Keahlian</h2>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>UI/UX Design</li>
+        <li>Content Writing</li>
+      </ul>
+    </section>
 
-      <div class="section" id="hobiSection">
-        <h2>Pengisi Waktu Luang</h2>
-        <div class="slider">
-          <div class="slider-card">
-            <img src="game.jpg" alt="Game">
-            <h3> Foto foto </h3>
-            <p>nga jago tapi buat ngisi waktu luang sama belajar rule of third oke banget.</p>
-          </div>
-          <div class="slider-card">
-            <img src="baca.jpg" alt="Membaca">
-            </h3>Membaca</h3>
-            <p>Baca apa ae lah, masio kadang rada males wkwk.</p>
-          </div>
-          <div class="slider-card">
-            <img src="nulis.jpg" alt="Menulis">
-            <h3> Belajar</h3>
-            <p>ga harus pelajaran sekolah, yang penting ttp blajar. mau crypto, soft and hard skill yang penting belajar dah.</p>
-          </div>
-        </div>
-      </div>
+    <section id="contact">
+      <h2>Kontak</h2>
+      <p>Email: <a href="mailto:nama.kamu@email.com" class="contact-link">nama.kamu@email.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/namakamu" target="_blank" class="contact-link">linkedin.com/in/namakamu</a></p>
+      <p>Instagram: <a href="https://instagram.com/namakamu" target="_blank" class="contact-link">@namakamu</a></p>
+    </section>
+  </main>
 
-      <div class="section contact">
-        <h2>Kontak</h2>
-        <p>Instagram: <a href="https://instagram.com/sulfatgpp_" target="_blank">@sulfatgpp_</a></p>
-      </div>
-    </div>
-    <div class="footer">&copy; 2025 Sulthan Fattah Sidik Pramono</div>
-  </div>
-
-  <script>
-    const quotes = [
-      "If you don’t fight, you can’t win. – Eren Yeager",
-      "This world is cruel... and also very beautiful. – Mikasa",
-      "I want to see and understand the world outside. – Armin",
-      "No matter how messed up things get, you can always figure out the best solution. – Hange",
-      "I’ll destroy them. Every last one of those animals! – Eren",
-      "I want to be free. – Eren"
-    ];
-    const quoteBox = document.getElementById("quoteBox");
-    quoteBox.textContent = quotes[Math.floor(Math.random() * quotes.length)];
-
-    const toggleBtn = document.getElementById("toggleHobi");
-    const hobiSection = document.getElementById("hobiSection");
-    hobiSection.style.display = "none";
-
-    toggleBtn.addEventListener("click", () => {
-      const visible = hobiSection.style.display === "block";
-      hobiSection.style.display = visible ? "none" : "block";
-      toggleBtn.textContent = visible ? "Pengisi Waktu Luang" : "Pengisi Waktu Luang";
-    });
-  </script>
+  <footer>
+    &copy; 2025 Nama Kamu. All rights reserved.
+  </footer>
 </body>
 </html>
